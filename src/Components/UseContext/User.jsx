@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
-import { UsersContext } from '../Context/UsersContext';
-
+import React  from 'react'
+import { CustomHook } from '../Hooks/CustomHook'
 const User = ({user}) => {
-  const {users, setUsers} = useContext(UsersContext)
+  const {users, setUsers} = CustomHook()
     const handleDeleteId = (id)=>{
       const filterUser = users.filter((user) => {
         return user.id !== id;

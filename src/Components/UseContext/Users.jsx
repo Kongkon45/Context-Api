@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import User from './User';
-import { UsersContext } from '../Context/UsersContext';
-
+import { CustomHook } from '../Hooks/CustomHook';
 const Users = () => {
-  const {users}= useContext(UsersContext)
+  const {users}= CustomHook()
   return (
     <div className='grid grid-cols-2 gap-10 mt-10'>
         {users.map((user)=>{
