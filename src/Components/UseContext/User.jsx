@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { UsersContext } from '../Context/UsersContext';
 
-const User = ({user, handleDeleteUser}) => {
+const User = ({user}) => {
+  const {users, setUsers} = useContext(UsersContext)
     const handleDeleteId = (id)=>{
-        handleDeleteUser(id)
+      const filterUser = users.filter((user) => {
+        return user.id !== id;
+      });
+      setUsers(filterUser);
     }
   return (
     <div className='bg-orange-400 text-white p-10 mx-5 rounded-2xl'>
